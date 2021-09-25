@@ -1,5 +1,5 @@
 import React from 'react';
-
+import s from './Button.module.css'
 
 type PropsType = {
     title: string
@@ -11,6 +11,9 @@ type PropsType = {
 export const ButtonReset = (props: PropsType) => {
 
     return (
-        <button onClick={() => props.reset()}>{props.title}</button>
+        <div>
+            <button onClick={() => props.reset()}>{props.title}</button>
+        </div>
+
     )
 }

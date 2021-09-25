@@ -3,8 +3,6 @@ import './App.css';
 import {ButtonInc} from "./ButtonInc";
 import {ButtonReset} from "./ButtonReset";
 
-
-
 function App() {
     let [numbers, setNumbers] = useState(0)
 
@@ -23,7 +21,8 @@ function App() {
         <div className="App">
             <div>
                 <h1>Greatest counter ever</h1>
-                {numbers}
+                <div>{numbers}</div>
+
             </div>
 
             <div>
