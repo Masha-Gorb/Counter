@@ -11,7 +11,7 @@ type PropsType = {
 export const ButtonReset = (props: PropsType) => {
 
     return (
-        <div>
+        <div className={s.buttonReset}>
             <button onClick={() => props.reset()}>{props.title}</button>
         </div>
 

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import s from './Screen.module.css'
 import {ButtonInc} from "./ButtonInc";
 import {ButtonReset} from "./ButtonReset";
 
@@ -21,7 +22,7 @@ function App() {
         <div className="App">
             <div>
                 <h1>Greatest counter ever</h1>
-                <div>{numbers}</div>
+                <div className={s.screen}>{numbers}</div>
 
             </div>
 
