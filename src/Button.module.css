@@ -1,4 +1,6 @@
 .buttonReset {
+    display: flex;
+    justify-content: center;
     background-color: wheat;
     width: 80px;
     height: 40px;
@@ -6,6 +8,8 @@
 }
 
 .buttonInc {
+    display: flex;
+    justify-content: center;
     background-color: aquamarine;
     width: 80px;
     height: 40px;
