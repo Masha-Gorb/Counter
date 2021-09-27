@@ -20,24 +20,21 @@ function App() {
 
     return (
         <div className="App">
-            <div>
+
                 <h1>Greatest counter ever</h1>
                 <div className={s.screen}>{numbers}</div>
 
-            </div>
-
-            <div>
                 <ButtonInc
                     title='inc'
                     increment={increment}
                     numbers={numbers}
                 />
+
                 <ButtonReset
                     title='reset'
                     reset={reset}
                     numbers={numbers}
                 />
-            </div>
 
         </div>
     );
