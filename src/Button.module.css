@@ -1,7 +1,13 @@
 .buttonReset {
     background-color: wheat;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
 }
 
 .buttonInc {
     background-color: aquamarine;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
 }
