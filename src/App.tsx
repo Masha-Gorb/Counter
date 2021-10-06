@@ -5,6 +5,7 @@ import {ButtonInc} from "./ButtonInc";
 import {ButtonReset} from "./ButtonReset";
 import { QuestionOne } from './Elle girl/QuestionOne';
 import { ResultButton } from './Elle girl/ResultButton';
+import { ReloadButton } from './Elle girl/ReloadButton';
 
 function App() {
     let [numbers, setNumbers] = useState(0)
@@ -76,6 +77,7 @@ function App() {
                 <ResultButton
                 showRes={showRes}
                 />
+                <ReloadButton/>
             </div>
 
 

@@ -10,7 +10,7 @@ type QuestionOneType = {
 export const QuestionOne = (props: QuestionOneType) => {
     return <div>
     <h3>{props.title}</h3>
-        <button onClick={props.incrementFirstOption}>My answer yes</button>
-        <button>My answer no</button>
+        <button onClick={props.incrementFirstOption} disabled={false}>My answer yes</button>
+        <button onClick={props.incrementSecondOption} disabled={false}>My answer no</button>
     </div>
 }
