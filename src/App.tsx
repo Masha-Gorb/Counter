@@ -37,6 +37,9 @@ function App() {
         } else {
             alert ('i dont know you')
         }
+        //window.location.reload();
+
+        document.getElementById("hui")!.setAttribute("disabled", "true");
     }
 
     return (
@@ -77,7 +80,7 @@ function App() {
                 <ResultButton
                 showRes={showRes}
                 />
-                <ReloadButton/>
+                {/*<ReloadButton/>*/}
             </div>
 
 
