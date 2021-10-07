@@ -6,6 +6,6 @@ export type ResButtonType = {
 
 export const ResultButton = (props: ResButtonType) => {
     return <div>
-        <button id="hui" onClick={props.showRes}>See your result</button>
+        <button onClick={props.showRes}>See your result</button>
     </div>
 }

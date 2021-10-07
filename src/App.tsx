@@ -33,11 +33,13 @@ function App() {
     let firstOption = 0;
     const incrementFirstOption = () => {
         firstOption++
+        document.getElementById("one")!.setAttribute("disabled", "true");
     }
 
     let secondOption = 0;
     const incrementSecondOption = () => {
         secondOption++
+        document.getElementById("one")!.setAttribute("disabled", "true");
     }
 
     const showRes = () => {
@@ -46,9 +48,6 @@ function App() {
         } else {
             alert ('i dont know you')
         }
-        //window.location.reload();
-
-        document.getElementById("hui")!.setAttribute("disabled", "true");
     }
 
     return (
@@ -80,7 +79,6 @@ function App() {
                 <ResultButton
                 showRes={showRes}
                 />
-                {/*<ReloadButton/>*/}
             </div>
 
 

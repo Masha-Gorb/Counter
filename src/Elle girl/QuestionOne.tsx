@@ -18,8 +18,8 @@ export const QuestionOne = (props: QuestionOneType) => {
     return <div>
         {props.data.map( q => <li>
             <h3>{q.title}</h3>
-            <button>{q.buttonOneTitle}</button>
-            <button>{q.buttonTwoTitle}</button>
+            <button id='one' onClick={props.incrementFirstOption}>{q.buttonOneTitle}</button>
+            <button id='two' onClick={props.incrementSecondOption}>{q.buttonTwoTitle}</button>
             </li>
 
         )}
