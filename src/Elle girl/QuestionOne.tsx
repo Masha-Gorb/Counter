@@ -1,7 +1,14 @@
 import React from 'react';
 
-type QuestionOneType = {
+type DataType = {
+    id: number
     title: string
+    buttonOneTitle: string
+    buttonTwoTitle: string
+}
+
+type QuestionOneType = {
+    data: Array<DataType>
     incrementFirstOption: () => void
     incrementSecondOption: () => void
 }
@@ -9,8 +16,12 @@ type QuestionOneType = {
 
 export const QuestionOne = (props: QuestionOneType) => {
     return <div>
-    <h3>{props.title}</h3>
-        <button onClick={props.incrementFirstOption} disabled={false}>My answer yes</button>
-        <button onClick={props.incrementSecondOption} disabled={false}>My answer no</button>
+        {props.data.map( q => <li>
+            <h3>{q.title}</h3>
+            <button>{q.buttonOneTitle}</button>
+            <button>{q.buttonTwoTitle}</button>
+            </li>
+
+        )}
     </div>
 }

@@ -21,6 +21,15 @@ function App() {
         setNumbers(result)
     }
 
+
+    let data = [
+        {id: 1, title: 'Do you like cookies?', buttonOneTitle: 'Yes, can eat a lot', buttonTwoTitle: 'prefer cabbage'},
+        {id: 2, title: 'Can you drive car?', buttonOneTitle: 'yep', buttonTwoTitle: 'no'},
+        {id: 3, title: 'Do you run fast?', buttonOneTitle: 'can say so', buttonTwoTitle: 'hate running'},
+        {id: 4, title: 'Do you sleep well?', buttonOneTitle: 'sleep is not for me', buttonTwoTitle: 'very well'},
+        {id: 5, title: 'Pelevin is your favorite autor?', buttonOneTitle: 'i have read all his books', buttonTwoTitle: 'definitly not'}
+    ]
+
     let firstOption = 0;
     const incrementFirstOption = () => {
         firstOption++
@@ -63,20 +72,11 @@ function App() {
             <div>
                 <h1>Greatest test ever</h1>
                 <QuestionOne
-                    title='Do you like cookies?'
+                    data={data}
                     incrementFirstOption={incrementFirstOption}
                     incrementSecondOption={incrementSecondOption}
                 />
-                <QuestionOne
-                    title='Do you like stand up?'
-                    incrementFirstOption={incrementFirstOption}
-                    incrementSecondOption={incrementSecondOption}
-                />
-                <QuestionOne
-                    title='Can you drive a car?'
-                    incrementFirstOption={incrementFirstOption}
-                    incrementSecondOption={incrementSecondOption}
-                />
+
                 <ResultButton
                 showRes={showRes}
                 />
