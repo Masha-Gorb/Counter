@@ -50,6 +50,10 @@ function App() {
         }
     }
 
+    const reloadPage = () => {
+        window.location.reload(false);
+    }
+
     return (
         <div className="App">
 
@@ -78,6 +82,7 @@ function App() {
 
                 <ResultButton
                 showRes={showRes}
+                reloadPage={reloadPage}
                 />
             </div>
 
