@@ -7,6 +7,6 @@ export type ResButtonType = {
 
 export const ResultButton = (props: ResButtonType) => {
     return <div>
-        <button onClick={props.showRes} onKeyPress={props.reloadPage}>See your result</button>
+        <button onClick={props.showRes} onKeyDown={props.reloadPage} >See your result</button>
     </div>
 }
