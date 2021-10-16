@@ -6,6 +6,7 @@ import {ButtonReset} from "./ButtonReset";
 import { QuestionOne } from './Elle girl/QuestionOne';
 import { ResultButton } from './Elle girl/ResultButton';
 import { ReloadButton } from './Elle girl/ReloadButton';
+import { Game } from './MortalKombat/MK';
 
 function App() {
     let [numbers, setNumbers] = useState(0)
@@ -72,18 +73,22 @@ function App() {
                 {/*    numbers={numbers}*/}
                 {/*/>*/}
 
-            <div>
-                <h1>Greatest test ever</h1>
-                <QuestionOne
-                    data={data}
-                    incrementFirstOption={incrementFirstOption}
-                    incrementSecondOption={incrementSecondOption}
-                />
+            {/*<div>*/}
+            {/*    <h1>Greatest test ever</h1>*/}
+            {/*    <QuestionOne*/}
+            {/*        data={data}*/}
+            {/*        incrementFirstOption={incrementFirstOption}*/}
+            {/*        incrementSecondOption={incrementSecondOption}*/}
+            {/*    />*/}
 
-                <ResultButton
-                showRes={showRes}
-                reloadPage={reloadPage}
-                />
+            {/*    <ResultButton*/}
+            {/*    showRes={showRes}*/}
+            {/*    reloadPage={reloadPage}*/}
+            {/*    />*/}
+            {/*</div>*/}
+
+            <div>
+                <Game/>
             </div>
 
 
