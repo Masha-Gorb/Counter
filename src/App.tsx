@@ -19,6 +19,17 @@ function App() {
         setNumbers(0)
     }
 
+    const setToLocalStorageHandler = () => {
+        localStorage.setItem('counterNumber', JSON.stringify(numbers))
+    }
+    const getFromLocalStorageHandler = () => {
+        let numbersAsString = localStorage.getItem('counterNumber')
+        if (numbersAsString) {
+            let newNumbers = JSON.parse(numbersAsString)
+            setNumbers(newNumbers)
+        }
+    }
+
     // let data = [
     //     {id: 1, title: 'Do you like cookies?', buttonOneTitle: 'Yes, can eat a lot', buttonTwoTitle: 'prefer cabbage'},
     //     {id: 2, title: 'Can you drive car?', buttonOneTitle: 'yep', buttonTwoTitle: 'no'},
@@ -57,6 +68,8 @@ function App() {
             <div className={s.screen}>{numbers}</div>
             <button onClick={incHandler} >inc</button>
             <button onClick={resetHandler} >reset</button>
+            <button onClick={setToLocalStorageHandler} >setToLocalStorage</button>
+            <button onClick={getFromLocalStorageHandler} >getFromLocalStorage</button>
 
         </div>
 
