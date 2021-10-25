@@ -11,89 +11,55 @@ import { Game } from './MortalKombat/MK';
 function App() {
     let [numbers, setNumbers] = useState(0)
 
-    const increment = (numbers: number) => {
-        let result = numbers+1
-        if(result < 6)
-            setNumbers(result)
+    const incHandler = () => {
+       setNumbers(numbers + 1)
     }
 
-    const reset = () => {
-        let result = 0
-        setNumbers(result)
+    const resetHandler = () => {
+        setNumbers(0)
     }
 
-
-    let data = [
-        {id: 1, title: 'Do you like cookies?', buttonOneTitle: 'Yes, can eat a lot', buttonTwoTitle: 'prefer cabbage'},
-        {id: 2, title: 'Can you drive car?', buttonOneTitle: 'yep', buttonTwoTitle: 'no'},
-        {id: 3, title: 'Do you run fast?', buttonOneTitle: 'can say so', buttonTwoTitle: 'hate running'},
-        {id: 4, title: 'Do you sleep well?', buttonOneTitle: 'sleep is not for me', buttonTwoTitle: 'very well'},
-        {id: 5, title: 'Pelevin is your favorite autor?', buttonOneTitle: 'i have read all his books', buttonTwoTitle: 'definitly not'}
-    ]
-
-    let firstOption = 0;
-    const incrementFirstOption = () => {
-        firstOption++
-        document.getElementById("one")!.setAttribute("disabled", "true");
-    }
-
-    let secondOption = 0;
-    const incrementSecondOption = () => {
-        secondOption++
-        document.getElementById("one")!.setAttribute("disabled", "true");
-    }
-
-    const showRes = () => {
-        if (firstOption > secondOption) {
-            alert ('you are Pupsik')
-        } else {
-            alert ('i dont know you')
-        }
-    }
-
-    const reloadPage = () => {
-        window.location.reload(false);
-    }
+    // let data = [
+    //     {id: 1, title: 'Do you like cookies?', buttonOneTitle: 'Yes, can eat a lot', buttonTwoTitle: 'prefer cabbage'},
+    //     {id: 2, title: 'Can you drive car?', buttonOneTitle: 'yep', buttonTwoTitle: 'no'},
+    //     {id: 3, title: 'Do you run fast?', buttonOneTitle: 'can say so', buttonTwoTitle: 'hate running'},
+    //     {id: 4, title: 'Do you sleep well?', buttonOneTitle: 'sleep is not for me', buttonTwoTitle: 'very well'},
+    //     {id: 5, title: 'Pelevin is your favorite autor?', buttonOneTitle: 'i have read all his books', buttonTwoTitle: 'definitly not'}
+    // ]
+    //
+    // let firstOption = 0;
+    // const incrementFirstOption = () => {
+    //     firstOption++
+    //     document.getElementById("one")!.setAttribute("disabled", "true");
+    // }
+    //
+    // let secondOption = 0;
+    // const incrementSecondOption = () => {
+    //     secondOption++
+    //     document.getElementById("one")!.setAttribute("disabled", "true");
+    // }
+    //
+    // const showRes = () => {
+    //     if (firstOption > secondOption) {
+    //         alert ('you are Pupsik')
+    //     } else {
+    //         alert ('i dont know you')
+    //     }
+    // }
+    //
+    // const reloadPage = () => {
+    //     window.location.reload(false);
+    //
 
     return (
         <div className="App">
 
-
-                {/*<div className={s.screen}>{numbers}</div>*/}
-
-                {/*<ButtonInc*/}
-                {/*    title='inc'*/}
-                {/*    increment={increment}*/}
-                {/*    numbers={numbers}*/}
-                {/*/>*/}
-
-                {/*<ButtonReset*/}
-                {/*    title='reset'*/}
-                {/*    reset={reset}*/}
-                {/*    numbers={numbers}*/}
-                {/*/>*/}
-
-            {/*<div>*/}
-            {/*    <h1>Greatest test ever</h1>*/}
-            {/*    <QuestionOne*/}
-            {/*        data={data}*/}
-            {/*        incrementFirstOption={incrementFirstOption}*/}
-            {/*        incrementSecondOption={incrementSecondOption}*/}
-            {/*    />*/}
-
-            {/*    <ResultButton*/}
-            {/*    showRes={showRes}*/}
-            {/*    reloadPage={reloadPage}*/}
-            {/*    />*/}
-            {/*</div>*/}
-
-            <div>
-                <Game/>
-            </div>
-
-
+            <div className={s.screen}>{numbers}</div>
+            <button onClick={incHandler} >inc</button>
+            <button onClick={resetHandler} >reset</button>
 
         </div>
+
     );
 }
 
