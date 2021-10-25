@@ -20,10 +20,10 @@ function App() {
     }
 
     const setToLocalStorageHandler = () => {
-        localStorage.setItem('counterNumber', JSON.stringify(numbers))
+        sessionStorage.setItem('counterNumber', JSON.stringify(numbers))
     }
     const getFromLocalStorageHandler = () => {
-        let numbersAsString = localStorage.getItem('counterNumber')
+        let numbersAsString = sessionStorage.getItem('counterNumber')
         if (numbersAsString) {
             let newNumbers = JSON.parse(numbersAsString)
             setNumbers(newNumbers)
