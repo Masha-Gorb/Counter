@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import s from './Screen.module.css'
 import {ButtonInc} from "./ButtonInc";
@@ -11,6 +11,18 @@ import { Game } from './MortalKombat/MK';
 function App() {
     let [numbers, setNumbers] = useState(0)
 
+    useEffect( () => {
+        let numbersAsString = localStorage.getItem('counterNumber')
+        if (numbersAsString) {
+            let newNumbers = JSON.parse(numbersAsString)
+            setNumbers(newNumbers)
+        }
+    }, [])
+
+    useEffect( ()=> {
+        localStorage.setItem('counterNumber', JSON.stringify(numbers))
+    }, [numbers])
+
     const incHandler = () => {
        setNumbers(numbers + 1)
     }
@@ -18,18 +30,6 @@ function App() {
     const resetHandler = () => {
         setNumbers(0)
     }
-
-    const setToLocalStorageHandler = () => {
-        sessionStorage.setItem('counterNumber', JSON.stringify(numbers))
-    }
-    const getFromLocalStorageHandler = () => {
-        let numbersAsString = sessionStorage.getItem('counterNumber')
-        if (numbersAsString) {
-            let newNumbers = JSON.parse(numbersAsString)
-            setNumbers(newNumbers)
-        }
-    }
-
     // let data = [
     //     {id: 1, title: 'Do you like cookies?', buttonOneTitle: 'Yes, can eat a lot', buttonTwoTitle: 'prefer cabbage'},
     //     {id: 2, title: 'Can you drive car?', buttonOneTitle: 'yep', buttonTwoTitle: 'no'},
@@ -68,8 +68,6 @@ function App() {
             <div className={s.screen}>{numbers}</div>
             <button onClick={incHandler} >inc</button>
             <button onClick={resetHandler} >reset</button>
-            <button onClick={setToLocalStorageHandler} >setToLocalStorage</button>
-            <button onClick={getFromLocalStorageHandler} >getFromLocalStorage</button>
 
         </div>
 
