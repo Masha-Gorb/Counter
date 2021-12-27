@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Button.module.css'
+// import s from './Button.module.css'
 
 
 type PropsType = {
@@ -12,6 +12,8 @@ type PropsType = {
 export const ButtonInc = (props: PropsType) => {
 
     return (
-        <button className={s.buttonInc} onClick={() => props.increment(props.numbers)}>{props.title}</button>
+        <div>
+            <button onClick={() => props.increment(props.numbers)}>{props.title}</button>
+        </div>
     )
 }
