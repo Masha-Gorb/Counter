@@ -6,7 +6,6 @@ import {ButtonReset} from "./ButtonReset";
 import { QuestionOne } from './Elle girl/QuestionOne';
 import { ResultButton } from './Elle girl/ResultButton';
 import { ReloadButton } from './Elle girl/ReloadButton';
-import { Game } from './MortalKombat/MK';
 
 function App() {
     let [numbers, setNumbers] = useState(0)
@@ -30,37 +29,7 @@ function App() {
     const resetHandler = () => {
         setNumbers(0)
     }
-    // let data = [
-    //     {id: 1, title: 'Do you like cookies?', buttonOneTitle: 'Yes, can eat a lot', buttonTwoTitle: 'prefer cabbage'},
-    //     {id: 2, title: 'Can you drive car?', buttonOneTitle: 'yep', buttonTwoTitle: 'no'},
-    //     {id: 3, title: 'Do you run fast?', buttonOneTitle: 'can say so', buttonTwoTitle: 'hate running'},
-    //     {id: 4, title: 'Do you sleep well?', buttonOneTitle: 'sleep is not for me', buttonTwoTitle: 'very well'},
-    //     {id: 5, title: 'Pelevin is your favorite autor?', buttonOneTitle: 'i have read all his books', buttonTwoTitle: 'definitly not'}
-    // ]
-    //
-    // let firstOption = 0;
-    // const incrementFirstOption = () => {
-    //     firstOption++
-    //     document.getElementById("one")!.setAttribute("disabled", "true");
-    // }
-    //
-    // let secondOption = 0;
-    // const incrementSecondOption = () => {
-    //     secondOption++
-    //     document.getElementById("one")!.setAttribute("disabled", "true");
-    // }
-    //
-    // const showRes = () => {
-    //     if (firstOption > secondOption) {
-    //         alert ('you are Pupsik')
-    //     } else {
-    //         alert ('i dont know you')
-    //     }
-    // }
-    //
-    // const reloadPage = () => {
-    //     window.location.reload(false);
-    //
+
 
     return (
         <div className="App">
