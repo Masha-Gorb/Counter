@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import App from "./App";
 import {UniversalButton} from "./UniversalButton";
 import s from "./Counter.module.css"
@@ -16,19 +16,19 @@ export const Counter = () => {
 
 
     const onChangeMinHandler = (e: any) => {
-        setMinValue(e.target.value)
+        setMinValue(Number(e.target.value))
     }
     const onChangeMaxHandler = (e: any) => {
-        setMaxValue(e.target.value)
+        setMaxValue(Number(e.target.value))
     }
 
     const onClickIncHandler = () => {
-        if (state + 1 < Number(maxValue)) {
-            setState(Number(state) + 1)
+        if (state + 1 < maxValue) {
+            setState(state + 1)
         } else {
             setDisableValue(true)
-            setState(Number(maxValue))
-            console.log(Number(maxValue))
+            setState(maxValue)
+            console.log(maxValue)
             setError('max value is reached')
         }
     }
@@ -40,8 +40,8 @@ export const Counter = () => {
     }
 
     const onClickSetHandler = () => {
-        setState(Number(minValue))
-        setMaxValue(Number(maxValue))
+        setState(minValue)
+        setMaxValue(maxValue)
     }
 
     return (
