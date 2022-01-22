@@ -1,0 +1,12 @@
+.display {
+    background-color: #1ea7fd;
+    width: 100px;
+}
+
+.error {
+    border: red 1px solid;
+}
+
+.error-message {
+    color: red;
+}
