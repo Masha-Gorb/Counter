@@ -1,3 +1,29 @@
+.App {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.App > div {
+  margin-right: 50px;
+}
+
+.error {
+  border: red 1px solid;
+}
+
+.error-message {
+  color: red;
+}
+
+.active-filter {
+  background-color: mediumpurple;
+}
+
+.is-done {
+  opacity: 0.5;
+}
+
 .storybook-button {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -127,4 +153,4 @@ section .tip-wrapper svg path {
 }
 
 
-/*# sourceMappingURL=main.1a4db710.chunk.css.map*/
+/*# sourceMappingURL=main.9fc34484.chunk.css.map*/

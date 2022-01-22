@@ -1,8 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
-import s from './Screen.module.css'
-import {ButtonInc} from "./ButtonInc";
-import {ButtonReset} from "./ButtonReset";
 
 function App() {
     // let [numbers, setNumbers] = useState(0)

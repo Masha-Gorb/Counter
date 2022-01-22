@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import App from "./App";
+import {UniversalButton} from "./UniversalButton";
 
 export default {
-    title: 'Counter button story',
+    title: 'Counter story',
     component: App
 }
 
-export const CounterButton = () => {
+export const Counter = () => {
     let [state, setState] = useState(0)
 
     const onClickIncHandler = () => {
@@ -19,8 +20,13 @@ export const CounterButton = () => {
     return (
         <div>
             <div>{state}</div>
-            <button onClick={onClickIncHandler}>inc</button>
-            <button onClick={onClickResetHandler}>reset</button>
+
+            <UniversalButton
+                title='Inc'
+                callback={onClickIncHandler}/>
+            <UniversalButton
+                title='Reset'
+                callback={onClickResetHandler}/>
         </div>
     )
 }
