@@ -1,6 +1,23 @@
+.all {
+    display: flex;
+    justify-content: center;
+}
+
+.displayModule {
+    background-color: #c2ffa6;
+    margin-right: 10pt;
+    padding: 5pt 5pt 5pt 5pt;
+}
+
 .display {
-    background-color: #1ea7fd;
+    background-color: #73caff;
     width: 100px;
+}
+
+.settingsModule {
+    background-color: #dbb3ff;
+    padding: 5pt 5pt 5pt 5pt;
+    align-content: center;
 }
 
 .error {

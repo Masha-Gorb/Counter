@@ -60,33 +60,31 @@ export const Counter = () => {
     }
 
     return (
-        <div>
-            <div className={s.display}>{state}</div>
-            {error && <div className='error-message'>{error}</div>}
+        <div className={s.all}>
+            <div className={s.displayModule}>
+                <div className={s.display}>{state}</div>
+                {error && <div className='error-message'>{error}</div>}
 
-            <UniversalButton
-                title='Inc'
-                callback={onClickIncHandler}
-                disabled={disableValue}
-            />
-            <UniversalButton
-                title='Reset'
-                callback={onClickResetHandler}
-                disabled={false}/>
-
-            <div>
-                <span>Max value</span>
-                <input type="number" min="0" max="100" value={maxValue} onChange={onChangeMaxHandler} />
+                <UniversalButton
+                    title='Inc'
+                    callback={onClickIncHandler}
+                    disabled={disableValue}
+                />
+                <UniversalButton
+                    title='Reset'
+                    callback={onClickResetHandler}
+                    disabled={false}/>
             </div>
 
-            <div>
+
+            <div className={s.settingsModule}>
+                <span>Max value</span>
+                <input type="number" min="0" max="100" value={maxValue} onChange={onChangeMaxHandler} />
                 <span>Min value</span>
                 <input type="number" min="0" max="100" value={minValue} onChange={onChangeMinHandler} />
                 {errorValue && <div className='error-message'>{errorValue}</div>}
-
+                <UniversalButton title="Set" callback={onClickSetHandler} disabled={disableValueonSetButton}/>
             </div>
-
-            <UniversalButton title="Set" callback={onClickSetHandler} disabled={disableValueonSetButton}/>
         </div>
     )
 }
