@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {useState} from 'react';
 import App from "./App";
 import {UniversalButton} from "./UniversalButton";
 import s from "./Counter.module.css"
@@ -12,7 +12,9 @@ export const Counter = () => {
     let [maxValue, setMaxValue] = useState(0)
     let [state, setState] = useState(minValue)
     let [error, setError] = useState<string | null>(null)
+    let [errorValue, setErrorValue] = useState<string | null>(null)
     let [disableValue, setDisableValue] = useState(false)
+    let [disableValueonSetButton, setDisableValueonSetButton] = useState(false)
 
 
     const onChangeMinHandler = (e: any) => {
@@ -37,11 +39,24 @@ export const Counter = () => {
         setState(0)
         setDisableValue(false)
         setError('')
+        setMaxValue(0)
+        setMinValue(0)
+        setErrorValue('')
+        setDisableValueonSetButton(false)
     }
 
     const onClickSetHandler = () => {
-        setState(minValue)
-        setMaxValue(maxValue)
+            let minValueVar = minValue
+            let maxValueVar = maxValue
+        if (minValueVar >= maxValueVar) {
+            setErrorValue('max value should be bigger than min value')
+            console.log('value cheker')
+        } else {
+            console.log('do nothing')
+            setState(minValueVar)
+            setMaxValue(maxValueVar)
+            setDisableValueonSetButton(true)
+        }
     }
 
     return (
@@ -61,15 +76,17 @@ export const Counter = () => {
 
             <div>
                 <span>Max value</span>
-                <input type="number" min="0" max="100" value={maxValue} onChange={onChangeMaxHandler}/>
+                <input type="number" min="0" max="100" value={maxValue} onChange={onChangeMaxHandler} />
             </div>
 
             <div>
                 <span>Min value</span>
-                <input type="number" min="0" max="100" value={minValue} onChange={onChangeMinHandler}/>
+                <input type="number" min="0" max="100" value={minValue} onChange={onChangeMinHandler} />
+                {errorValue && <div className='error-message'>{errorValue}</div>}
+
             </div>
 
-            <UniversalButton title="Set" callback={onClickSetHandler} disabled={false}/>
+            <UniversalButton title="Set" callback={onClickSetHandler} disabled={disableValueonSetButton}/>
         </div>
     )
 }
