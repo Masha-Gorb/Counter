@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import App from "./App";
 import {UniversalButton} from "./UniversalButton";
 import s from "./Counter.module.css"
+import {Counter2} from "./Counter2";
 export default {
     title: 'Counter story',
-    component: App
+    component: Counter2
 }
 
 export const Counter = () => {
