@@ -24,6 +24,35 @@
   opacity: 0.5;
 }
 
+.Counter_all__1ZdFR {
+    display: flex;
+    justify-content: center;
+}
+
+.Counter_displayModule__2vzdG {
+    background-color: #c2ffa6;
+    margin-right: 10pt;
+    padding: 5pt 5pt 5pt 5pt;
+}
+
+.Counter_display__3yJuu {
+    background-color: #73caff;
+    width: 100px;
+}
+
+.Counter_settingsModule__2mN8H {
+    background-color: #dbb3ff;
+    padding: 5pt 5pt 5pt 5pt;
+    align-content: center;
+}
+
+.Counter_error__3u1RI {
+    border: red 1px solid;
+}
+
+.Counter_error-message__OGNkr {
+    color: red;
+}
 .storybook-button {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -153,4 +182,4 @@ section .tip-wrapper svg path {
 }
 
 
-/*# sourceMappingURL=main.9fc34484.chunk.css.map*/
+/*# sourceMappingURL=main.1992cb53.chunk.css.map*/

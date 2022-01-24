@@ -50,9 +50,7 @@ export const Counter = () => {
             let maxValueVar = maxValue
         if (minValueVar >= maxValueVar) {
             setErrorValue('max value should be bigger than min value')
-            console.log('value cheker')
         } else {
-            console.log('do nothing')
             setState(minValueVar)
             setMaxValue(maxValueVar)
             setDisableValueonSetButton(true)
@@ -85,6 +83,7 @@ export const Counter = () => {
                 {errorValue && <div className='error-message'>{errorValue}</div>}
                 <UniversalButton title="Set" callback={onClickSetHandler} disabled={disableValueonSetButton}/>
             </div>
+
         </div>
     )
 }
