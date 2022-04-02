@@ -1,29 +1,3 @@
-.App {
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-.App > div {
-  margin-right: 50px;
-}
-
-.error {
-  border: red 1px solid;
-}
-
-.error-message {
-  color: red;
-}
-
-.active-filter {
-  background-color: mediumpurple;
-}
-
-.is-done {
-  opacity: 0.5;
-}
-
 .Counter_all__1ZdFR {
     display: flex;
     justify-content: center;
@@ -182,4 +156,4 @@ section .tip-wrapper svg path {
 }
 
 
-/*# sourceMappingURL=main.1992cb53.chunk.css.map*/
+/*# sourceMappingURL=main.54d922cd.chunk.css.map*/
