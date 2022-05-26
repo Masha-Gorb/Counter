@@ -1,12 +1,5 @@
 import React, {useState} from 'react';
-import App from "./App";
 import {UniversalButton} from "./UniversalButton";
-import s from "./Counter.module.css"
-import {Counter2} from "./Counter2";
-export default {
-    title: 'Counter story',
-    component: Counter2
-}
 
 export const Counter = () => {
     let [minValue, setMinValue] = useState(0)
@@ -59,9 +52,9 @@ export const Counter = () => {
     }
 
     return (
-        <div className={s.all}>
-            <div className={s.displayModule}>
-                <div className={s.display}>{state}</div>
+        <div>
+            <div>
+                <div>{state}</div>
                 {error && <div className='error-message'>{error}</div>}
 
                 <UniversalButton
@@ -76,7 +69,7 @@ export const Counter = () => {
             </div>
 
 
-            <div className={s.settingsModule}>
+            <div>
                 <span>Max value</span>
                 <input type="number" min="0" max="100" value={maxValue} onChange={onChangeMaxHandler} />
                 <span>Min value</span>
