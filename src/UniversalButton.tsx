@@ -1,4 +1,6 @@
 import React from 'react';
+import './UniversalButton.css';
+
 
 type PropsType = {
     title: string
@@ -10,7 +12,7 @@ type PropsType = {
 export const UniversalButton = (props: PropsType) => {
     return (
         <div>
-            <button disabled={props.disabled} onClick={props.callback}>{props.title}</button>
+            <button className="button" disabled={props.disabled} onClick={props.callback}>{props.title}</button>
         </div>
     )
 }

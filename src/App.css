@@ -1,7 +1,8 @@
 .App {
   padding: 30px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App > div {

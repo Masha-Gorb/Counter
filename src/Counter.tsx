@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import {UniversalButton} from "./UniversalButton";
+import './App.css';
+import './Counter.css';
 
 export const Counter = () => {
     let [minValue, setMinValue] = useState(0)
@@ -8,7 +10,7 @@ export const Counter = () => {
     let [error, setError] = useState<string | null>(null)
     let [errorValue, setErrorValue] = useState<string | null>(null)
     let [disableValue, setDisableValue] = useState(false)
-    let [disableValueonSetButton, setDisableValueonSetButton] = useState(false)
+    let [disableValueOnSetButton, setDisableValueOnSetButton] = useState(false)
 
 
     const onChangeMinHandler = (e: any) => {
@@ -25,7 +27,7 @@ export const Counter = () => {
             setDisableValue(true)
             setState(maxValue)
             console.log(maxValue)
-            setError('max value is reached')
+            setError('все! ты съел свой максимум!')
         }
     }
 
@@ -36,46 +38,56 @@ export const Counter = () => {
         setMaxValue(0)
         setMinValue(0)
         setErrorValue('')
-        setDisableValueonSetButton(false)
+        setDisableValueOnSetButton(false)
     }
 
     const onClickSetHandler = () => {
             let minValueVar = minValue
             let maxValueVar = maxValue
         if (minValueVar >= maxValueVar) {
-            setErrorValue('max value should be bigger than min value')
+            setErrorValue('считай шашлык! максимальное количество должно быть больше чем минимальное')
+            setMaxValue(0)
+            setMinValue(0)
         } else {
             setState(minValueVar)
             setMaxValue(maxValueVar)
-            setDisableValueonSetButton(true)
+            setDisableValueOnSetButton(true)
+            setErrorValue('')
+
         }
     }
 
     return (
         <div>
-            <div>
-                <div>{state}</div>
+            <div className="displayContainer">
+                <h1>Счетчик кусочков шашлыка 🍖</h1>
+                <div className="display">
+                    <div>{state}</div>
+                </div>
                 {error && <div className='error-message'>{error}</div>}
 
-                <UniversalButton
-                    title='Inc'
-                    callback={onClickIncHandler}
-                    disabled={disableValue}
-                />
-                <UniversalButton
-                    title='Reset'
-                    callback={onClickResetHandler}
-                    disabled={false}/>
+                <div className="buttonsContainer">
+                    <UniversalButton
+                      title='ЕЩЕ!'
+                      callback={onClickIncHandler}
+                      disabled={disableValue}
+                    />
+                    <UniversalButton
+                      title='Начать заново'
+                      callback={onClickResetHandler}
+                      disabled={false}/>
+                </div>
             </div>
 
 
-            <div>
-                <span>Max value</span>
+            <div className="settingsContainer">
+                <span className="instruction">Сперва выстави настройки по кусочкам шашлыка, а потом жмякай еще!</span>
+                <span>максимум кусков шашлыка сколько я могу съесть</span>
                 <input type="number" min="0" max="100" value={maxValue} onChange={onChangeMaxHandler} />
-                <span>Min value</span>
+                <span>минимум кусочков шашлыка сколько я хочу</span>
                 <input type="number" min="0" max="100" value={minValue} onChange={onChangeMinHandler} />
                 {errorValue && <div className='error-message'>{errorValue}</div>}
-                <UniversalButton title="Set" callback={onClickSetHandler} disabled={disableValueonSetButton}/>
+                <UniversalButton title="Настроить" callback={onClickSetHandler} disabled={disableValueOnSetButton}/>
             </div>
 
         </div>
