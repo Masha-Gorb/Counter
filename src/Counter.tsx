@@ -84,7 +84,7 @@ export const Counter = () => {
                 <span className="instruction">Сперва выстави настройки по кусочкам шашлыка, а потом жмякай еще!</span>
                 <span>максимум кусков шашлыка сколько я могу съесть</span>
                 <input type="number" min="0" max="100" value={maxValue} onChange={onChangeMaxHandler} />
-                <span>сколько кусочков шашлыка я уже съел</span>
+                <span>сколько кусочков шашлыка я уже съел :)</span>
                 <input type="number" min="0" max="100" value={minValue} onChange={onChangeMinHandler} />
                 {errorValue && <div className='error-message'>{errorValue}</div>}
                 <UniversalButton title="Настроить" callback={onClickSetHandler} disabled={disableValueOnSetButton}/>
